@@ -13,8 +13,10 @@
     <LinearLayout
         android:id="@+id/email_login_form"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
 
         <EditText
             android:id="@+id/usuario"
@@ -37,6 +39,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Entrar"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/botao_criar_conta"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cadastrar novo usuário"
             android:textStyle="bold" />
 
     </LinearLayout>

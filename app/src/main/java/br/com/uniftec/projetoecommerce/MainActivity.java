@@ -1,5 +1,6 @@
 package br.com.uniftec.projetoecommerce;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
 
     @Override
     public void run() {
-        this.setContentView(R.layout.activity_login);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
