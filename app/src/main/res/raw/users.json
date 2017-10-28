@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "nome": "admin",
+    "email": "admin@admin.com",
+    "senha": "admin",
+    "cpf": "123456789",
+    "telefone": "054-91919991",
+    "listEnderecos": [
+      {
+        "id": 1,
+        "rua": "Jose tadeu alves paim",
+        "numero": 123,
+        "complemento": "casa",
+        "bairro": "Centro",
+        "cidade": "Caxias do Sul",
+        "estado": "RS"
+      },
+      {
+        "id": 2,
+        "rua": "Joao abreu",
+        "numero": 555,
+        "complemento": "ap",
+        "bairro": "Cidade baixa",
+        "cidade": "Canela",
+        "estado": "RS"
+      },
+      {
+        "id": 3,
+        "rua": "DIno sauro",
+        "numero": 99,
+        "complemento": "sitio",
+        "bairro": "Campestre",
+        "cidade": "São Marcos",
+        "estado": "SC"
+      }
+    ],
+    "listProdutos": [
+      {
+        "id": 1,
+        "titulo": "Samsung Galaxy S8 Dual Chip 4g Tela Infinita 5,8 ",
+        "descricao": "O display infinito tem uma tela incrível de ponta a ponta que se estende até as laterais do telefone, formando uma superfície totalmente suave e contínua. É vidro puro, intocado e ininterrupto, que ocupa toda a frente do telefone, fluindo pela estrutura de alumínio. O resultado é uma peça com lindas curvas, perfeitamente simétrica e única.",
+        "urlImagemPrincipal": "\/s8_0.webp",
+        "listUrlsImagens": [
+          "\/s8_1.webp",
+          "\/s8_2.webp"
+        ],
+        "preco": 3999.00,
+        "precoComDesconto": 3599.00,
+        "categoria": {
+          "id": 1,
+          "nome": "Eletrônicos"
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Samsung Galaxy J5 Duos Preto",
+        "descricao": "Com a tela super AMOLED, O Galaxy J permite que você visualize fotos, vídeo, jogos e seus aplicativos preferidos de forma muito mais vívida e nítida..",
+        "urlImagemPrincipal": "\/j5_0.webp",
+        "listUrlsImagens": [
+          "\/j5_1.webp",
+          "\/j5_2.webp",
+          "\/j5_3.webp"
+        ],
+        "preco": 1099.00,
+        "precoComDesconto": 799.00,
+        "categoria": {
+          "id": 1,
+          "nome": "Eletrônicos"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "dev",
+    "email": "dev@dev.com",
+    "senha": "dev",
+    "cpf": "123456789",
+    "telefone": "054-91919991",
+    "listEnderecos": [
+      {
+        "id": 1,
+        "rua": "Jose tadeu alves paim",
+        "numero": 123,
+        "complemento": "casa",
+        "bairro": "Centro",
+        "cidade": "Caxias do Sul",
+        "estado": "RS"
+      },
+      {
+        "id": 2,
+        "rua": "Joao abreu",
+        "numero": 555,
+        "complemento": "ap",
+        "bairro": "Cidade baixa",
+        "cidade": "Canela",
+        "estado": "RS"
+      },
+      {
+        "id": 3,
+        "rua": "Dino sauro",
+        "numero": 99,
+        "complemento": "sitio",
+        "bairro": "Campestre",
+        "cidade": "São Marcos",
+        "estado": "SC"
+      }
+    ],
+    "listProdutos": [
+      {
+        "id": 3,
+        "titulo": "Console Microsoft Xbox One 1tb Sem Kinect - Elite",
+        "descricao": "Tenha um desempenho profissional com o bundle Xbox One Elite, o modelo que chegou para agradar aosjogadores mais exigentes.",
+        "urlImagemPrincipal": "\/xbox_0.webp",
+        "listUrlsImagens": [
+          "\/xbox_1.webp",
+          "\/xbox_2.webp"
+        ],
+        "preco": 2699.00,
+        "precoComDesconto": 2099.00,
+        "categoria": {
+          "id": 1,
+          "nome": "Eletrônicos"
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Samsung Galaxy J5 Duos Preto",
+        "descricao": "Com a tela super AMOLED, O Galaxy J permite que você visualize fotos, vídeo, jogos e seus aplicativos preferidos de forma muito mais vívida e nítida..",
+        "urlImagemPrincipal": "\/j5_0.webp",
+        "listUrlsImagens": [
+          "\/j5_1.webp",
+          "\/j5_2.webp",
+          "\/j5_3.webp"
+        ],
+        "preco": 1099.00,
+        "precoComDesconto": 799.00,
+        "categoria": {
+          "id": 1,
+          "nome": "Eletrônicos"
+        }
+      }
+    ]
+  }
+]
