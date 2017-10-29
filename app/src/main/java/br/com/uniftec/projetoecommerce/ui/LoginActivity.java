@@ -20,19 +20,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText senhaEditText;
     private Button enterButton;
     private Button newUserButton;
+    private List<Usuario> usuarios;
+    private static int NUMERO_USUARIO = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        List<Usuario> usuarios = DataSource.carregarJsonTestes(this);
+        usuarios = DataSource.carregarJsonTestes(this);
 
         usuarioEdiText = (EditText) findViewById(R.id.usuario);
         senhaEditText = (EditText) findViewById(R.id.password);
 
-        usuarioEdiText.setText(usuarios.get(1).getEmail());
-        senhaEditText.setText(usuarios.get(1).getSenha());
+        usuarioEdiText.setText(usuarios.get(NUMERO_USUARIO).getEmail());
+        senhaEditText.setText(usuarios.get(NUMERO_USUARIO).getSenha());
 
         newUserButton = (Button) findViewById(R.id.botao_criar_conta);
         newUserButton.setOnClickListener(this);
@@ -46,7 +48,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         switch (view.getId()) {
             case R.id.botao_criar_conta:
-                startActivity(new Intent(this, UserActivity.class));
+
+                Intent intent = new Intent(this, UserActivity.class);
+                intent.putExtra(UserActivity.USER_PARAMETER, usuarios.get(NUMERO_USUARIO));
+                startActivity(intent);
+
                 break;
             case R.id.botao_entrar:
                 startActivity(new Intent(this, HomeActivity.class));
