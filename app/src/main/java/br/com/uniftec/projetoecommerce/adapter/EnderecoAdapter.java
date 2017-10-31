@@ -1,7 +1,9 @@
 package br.com.uniftec.projetoecommerce.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,20 +21,20 @@ import br.com.uniftec.projetoecommerce.viewHolder.EnderecoViewHolder;
 public class EnderecoAdapter extends RecyclerView.Adapter {
 
     private List<Endereco> listEnderecos;
-    private Context context;
+    private OnActionCompleted callbackEndereco;
 
-    public EnderecoAdapter(List<Endereco> listEnderecos, Context context) {
+    public EnderecoAdapter(List<Endereco> listEnderecos, OnActionCompleted callbackEndereco) {
         this.listEnderecos = listEnderecos;
-        this.context = context;
+        this.callbackEndereco = callbackEndereco;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context)
+        View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_endereco, parent, false);
 
-        EnderecoViewHolder holder = new EnderecoViewHolder(view);
+        EnderecoViewHolder holder = new EnderecoViewHolder(view, callbackEndereco);
         return holder;
     }
 
@@ -52,5 +54,9 @@ public class EnderecoAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return listEnderecos.size();
+    }
+
+    public interface OnActionCompleted {
+        void OnClick(int position);
     }
 }
