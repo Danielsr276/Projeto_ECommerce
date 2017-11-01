@@ -33,6 +33,78 @@
         "bairro": "Campestre",
         "cidade": "São Marcos",
         "estado": "SC"
+      },
+      {
+        "id": 4,
+        "rua": "Joao abreu",
+        "numero": 555,
+        "complemento": "ap",
+        "bairro": "Cidade alta",
+        "cidade": "Canelaça",
+        "estado": "RSAA"
+      },
+      {
+        "id": 5,
+        "rua": "DIno sauro",
+        "numero": 99,
+        "complemento": "sitio",
+        "bairro": "Campestre 3",
+        "cidade": "Vacaria",
+        "estado": "SCVV"
+      },
+      {
+        "id": 6,
+        "rua": "Joao abreu",
+        "numero": 555,
+        "complemento": "ap",
+        "bairro": "Cidade baixa",
+        "cidade": "Can__ela",
+        "estado": "RSCC"
+      },
+      {
+        "id": 7,
+        "rua": "DIno sauro",
+        "numero": 99,
+        "complemento": "sitio",
+        "bairro": "Campestre",
+        "cidade": "São MM Marcos",
+        "estado": "S MM C"
+      },
+      {
+        "id": 4,
+        "rua": "Joao abreu",
+        "numero": 555,
+        "complemento": "ap",
+        "bairro": "Cidade alta",
+        "cidade": "Canelaça",
+        "estado": "RSAA"
+      },
+      {
+        "id": 5,
+        "rua": "DIno sauro",
+        "numero": 99,
+        "complemento": "sitio",
+        "bairro": "Campestre 3",
+        "cidade": "Vacaria",
+        "estado": "SCVV"
+      },
+      {
+        "id": 6,
+        "rua": "Joao abreu",
+        "numero": 555,
+        "complemento": "ap",
+        "bairro": "Cidade baixa",
+        "cidade": "Can__ela",
+        "estado": "RSCC"
+      },
+      {
+        "id": 7,
+        "rua": "DIno sauro",
+        "numero": 99,
+        "complemento": "sitio",
+        "bairro": "Campestre",
+        "cidade": "São MM Marcos",
+        "estado": "S MM C"
       }
     ],
     "listProdutos": [

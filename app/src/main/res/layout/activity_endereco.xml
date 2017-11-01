@@ -148,6 +148,16 @@
                 android:hint="Informe o estado" />
         </LinearLayout>
 
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_cadastrar_endereco"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:text="OK"
+        android:textStyle="bold" />
+
 </RelativeLayout>

@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button enterButton;
     private Button newUserButton;
     private List<Usuario> usuarios;
-    private static int NUMERO_USUARIO = 1;
+    private static int NUMERO_USUARIO = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
