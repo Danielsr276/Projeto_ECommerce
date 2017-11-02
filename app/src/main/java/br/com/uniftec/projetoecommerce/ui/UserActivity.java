@@ -1,12 +1,10 @@
 package br.com.uniftec.projetoecommerce.ui;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +27,8 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
     private EditText cpfUsuario;
     private EditText telefoneUsuario;
     private Button btnCadastrarUsuario;
+    private List<Endereco> listEnderecos;
+    private Button btnAdicionarEndereco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,10 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
         cpfUsuario = (EditText) findViewById(R.id.id_cpf);
         telefoneUsuario = (EditText) findViewById(R.id.id_telefone);
         btnCadastrarUsuario = (Button) findViewById(R.id.btn_cadastrar_usuario);
+        btnAdicionarEndereco = (Button) findViewById(R.id.btn_add_endereco);
 
         btnCadastrarUsuario.setOnClickListener(this);
+        btnAdicionarEndereco.setOnClickListener(this);
 
         nomeUsuario.setText(usuario.getNome());
         emailUsuario.setText(usuario.getEmail());
@@ -54,7 +56,7 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
 
         recyclerViewListaEnderecos = (RecyclerView) findViewById(R.id.recyclerViewlistaEnderecos);
 
-        List<Endereco> listEnderecos = usuario.getListEnderecos();
+        listEnderecos = usuario.getListEnderecos();
 
         recyclerViewListaEnderecos.setAdapter(new EnderecoAdapter(listEnderecos, this));
 
@@ -66,16 +68,25 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
     }
 
     @Override
-    public void OnClick(int position) {
-        Intent intent = new Intent(this, EnderecoActivity.class);
-        intent.putExtra(EnderecoActivity.ENDERECO_TO_EDIT, usuario.getListEnderecos().get(position));
-        startActivity(intent);
+    public void OnClick(int position, boolean isDelete) {
+        if (!isDelete) {
+            Intent intent = new Intent(this, EnderecoActivity.class);
+            intent.putExtra(EnderecoActivity.ENDERECO_TO_EDIT, usuario.getListEnderecos().get(position));
+            startActivity(intent);
+        } else {
+            recyclerViewListaEnderecos.getAdapter().notifyItemRemoved(position);
+            usuario.getListEnderecos().remove(position);
+        }
     }
 
     @Override
     public void onClick(View view) {
         if (view == btnCadastrarUsuario) {
             finish();
+        } else if (view == btnAdicionarEndereco) {
+            Intent intent = new Intent(this, EnderecoActivity.class);
+            intent.putExtra(EnderecoActivity.ENDERECO_TO_EDIT, new Endereco());
+            startActivity(intent);
         }
     }
 }

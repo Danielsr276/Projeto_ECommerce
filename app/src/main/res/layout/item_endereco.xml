@@ -23,4 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1" />
 
+    <ImageView
+        android:id="@+id/task_delete"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:src="@android:drawable/ic_delete"
+        android:layout_weight="1"/>
+
 </LinearLayout>

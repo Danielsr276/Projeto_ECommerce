@@ -57,6 +57,6 @@ public class EnderecoAdapter extends RecyclerView.Adapter {
     }
 
     public interface OnActionCompleted {
-        void OnClick(int position);
+        void OnClick(int position, boolean isDelete);
     }
 }

@@ -1,5 +1,6 @@
 package br.com.uniftec.projetoecommerce.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -45,9 +46,9 @@ public class EnderecoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void populateEndereco(Endereco endereco) {
-        idEndereco.setText(String.valueOf(endereco.getId()));
+        idEndereco.setText(String.valueOf(endereco.getId() != null ? endereco.getId() : ""));
         ruaEndereco.setText(endereco.getRua());
-        numeroEndereco.setText(String.valueOf(endereco.getNumero()));
+        numeroEndereco.setText(String.valueOf(endereco.getNumero() != null ? endereco.getNumero() : ""));
         complementoEndereco.setText(endereco.getComplemento());
         bairroEndereco.setText(endereco.getBairro());
         cidadeEndereco.setText(endereco.getCidade());
