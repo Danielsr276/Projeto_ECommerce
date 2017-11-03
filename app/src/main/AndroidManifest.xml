@@ -24,7 +24,11 @@
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.UserActivity" />
         <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.EnderecoActivity"></activity>
+        <activity android:name=".ui.EnderecoActivity" />
+        <activity
+            android:name=".ui.ListProdutosActivity"
+            android:label="@string/title_activity_list_produtos"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

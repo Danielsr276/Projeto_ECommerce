@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 break;
             case R.id.botao_entrar:
-                startActivity(new Intent(this, HomeActivity.class));
+                startActivity(new Intent(this, ListProdutosActivity.class));
         }
     }
 }
