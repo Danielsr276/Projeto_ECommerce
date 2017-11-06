@@ -6,12 +6,47 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.com.uniftec.projetoecommerce.ui.ListProdutosActivity$PlaceholderFragment">
+    tools:context="br.com.uniftec.projetoecommerce.ui.fragment.ListProdutosFragment">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:text="hello word"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/layout_column_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ordenar por: "/>
+        <Spinner
+            android:id="@+id/spinner_categoria_destaque"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/categoria_destaque"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
 
+        <Spinner
+            android:id="@+id/spinner_alfabeto_preco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/alfabeto_preco"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_column_top"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_list_produtos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"/>
+
+    </ScrollView>
 </RelativeLayout>

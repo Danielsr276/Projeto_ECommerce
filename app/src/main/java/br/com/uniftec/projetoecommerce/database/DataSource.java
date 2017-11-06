@@ -53,7 +53,7 @@ public class DataSource {
         return usuarios;
     }
 
-    private static void popularProdutos(Usuario usuario, JSONArray listProdutos) throws JSONException {
+    public static void popularProdutos(Usuario usuario, JSONArray listProdutos) throws JSONException {
         for (int i = 0; i < listProdutos.length(); i++) {
             JSONObject jsonResult = listProdutos.getJSONObject(i);
 
@@ -70,6 +70,7 @@ public class DataSource {
             JSONObject categoria = jsonResult.getJSONObject("categoria");
             produto.getCategoria().setId(categoria.getInt("id"));
             produto.getCategoria().setNome(categoria.getString("nome"));
+            usuario.getListProdutos().add(produto);
 
         }
     }
@@ -113,5 +114,55 @@ public class DataSource {
         return json;
     }
 
+    public static String loadJSONProductsFromAsset(Context context) throws IOException {
+        String json = null;
+        try {
+            InputStream is = context.getResources().openRawResource(R.raw.products);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+
+    public static List<Produto> carregarJsonTestesProducts(Context context) {
+
+        List<Produto> produtos = new ArrayList<>();
+
+        try {
+            JSONArray results = new JSONArray(loadJSONProductsFromAsset(context));
+
+            for (int i = 0; i < results.length(); i++) {
+                JSONObject jsonResult = results.getJSONObject(i);
+
+                Produto produto = new Produto();
+                produto.setId(jsonResult.getInt("id"));
+                produto.setTitulo(jsonResult.getString("titulo"));
+                produto.setUrlImagemPrincipal(jsonResult.getString("urlImagemPrincipal"));
+
+                popularListaUrls(produto, jsonResult.getJSONArray("listUrlsImagens"));
+
+                produto.setPreco(BigDecimal.valueOf(jsonResult.getDouble("preco")));
+                produto.setPrecoComDesconto(BigDecimal.valueOf(jsonResult.getDouble("precoComDesconto")));
+                produto.setDestaque(jsonResult.getInt("destaque"));
+
+                JSONObject categoria = jsonResult.getJSONObject("categoria");
+                produto.getCategoria().setId(categoria.getInt("id"));
+                produto.getCategoria().setNome(categoria.getString("nome"));
+
+                produtos.add(produto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return produtos;
+    }
 
 }

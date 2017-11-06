@@ -23,6 +23,7 @@ public class Produto implements Serializable {
     private List<String> listUrlsImagens;
     private BigDecimal preco;
     private BigDecimal precoComDesconto;
+    private Integer destaque;
     private Categoria categoria;
 
     public Integer getId() {
@@ -87,5 +88,13 @@ public class Produto implements Serializable {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Integer getDestaque() {
+        return destaque;
+    }
+
+    public void setDestaque(Integer destaque) {
+        this.destaque = destaque;
     }
 }
