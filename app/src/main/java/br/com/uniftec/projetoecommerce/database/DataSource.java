@@ -151,6 +151,7 @@ public class DataSource {
                 produto.setPreco(BigDecimal.valueOf(jsonResult.getDouble("preco")));
                 produto.setPrecoComDesconto(BigDecimal.valueOf(jsonResult.getDouble("precoComDesconto")));
                 produto.setDestaque(jsonResult.getInt("destaque"));
+                produto.setDescricao(jsonResult.getString("descricao"));
 
                 JSONObject categoria = jsonResult.getJSONObject("categoria");
                 produto.getCategoria().setId(categoria.getInt("id"));
