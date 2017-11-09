@@ -4,10 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import br.com.uniftec.projetoecommerce.R;
 import br.com.uniftec.projetoecommerce.adapter.ProdutosImagensAdapter;
@@ -24,6 +28,7 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
     private TextView textViewPreco;
     private TextView textViewDesconto;
     private TextView textViewDescricao;
+    private TextView textViewDescricaoCategoria;
     private Button btnFecharDetalhe;
     private RecyclerView recyclerViewImagens;
 
@@ -54,6 +59,9 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
 
         textViewDescricao = (TextView) findViewById(R.id.descricao_detalhe_produto);
         textViewDescricao.setText(produto.getDescricao());
+
+        textViewDescricaoCategoria = (TextView) findViewById(R.id.descricao_categoria_produto);
+        textViewDescricaoCategoria.setText(produto.getCategoria().getNome());
 
         btnFecharDetalhe = (Button) findViewById(R.id.btn_detalhe_produto_fechar);
         btnFecharDetalhe.setOnClickListener(this);

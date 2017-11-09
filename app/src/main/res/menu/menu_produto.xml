@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_carrinho_compras"
+        android:title="Carrinho de compras"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:iconTint="@color/colorPrimaryDark"/>
+    <item
+        android:id="@+id/menu_cliente"
+        android:title="Usuário"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:iconTint="@color/colorPrimaryDark"/>
+</menu>

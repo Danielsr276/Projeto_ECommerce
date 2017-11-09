@@ -26,8 +26,6 @@ import br.com.uniftec.projetoecommerce.viewHolder.ProdutoViewHolder;
 
 public class ProductAdapter extends RecyclerView.Adapter implements View.OnClickListener {
 
-    private LayoutInflater layoutInflater;
-
     private List<Produto> listProdutos;
     private OnActionProductCompleted callbackProduto;
 

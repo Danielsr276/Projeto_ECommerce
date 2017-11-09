@@ -29,7 +29,9 @@
             android:name=".ui.ListProdutosActivity"
             android:label="@string/title_activity_list_produtos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.DetalheProdutoActivity"></activity>
+        <activity android:name=".ui.DetalheProdutoActivity" />
+        <activity android:name=".ui.CarrinhoComprasActivity" />
+        <activity android:name=".ui.FinalizarCompraActivity"></activity>
     </application>
 
 </manifest>

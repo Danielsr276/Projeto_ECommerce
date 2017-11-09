@@ -124,6 +124,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:text="OK"
+        android:layout_margin="16dp"
         android:textStyle="bold" />
 
 </RelativeLayout>

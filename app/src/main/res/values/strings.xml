@@ -25,5 +25,14 @@
         <item>"Alfabética"</item>
         <item>"Preços"</item>
     </string-array>
+    <string-array name="endereco_mock">
+        <item>"Caxias do sul"</item>
+        <item>"São Marcos"</item>
+        <item>"Canela"</item>
+        <item>"Gramado"</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
