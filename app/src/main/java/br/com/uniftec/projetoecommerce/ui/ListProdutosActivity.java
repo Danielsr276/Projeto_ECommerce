@@ -1,8 +1,11 @@
 package br.com.uniftec.projetoecommerce.ui;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +18,7 @@ import br.com.uniftec.projetoecommerce.R;
 import br.com.uniftec.projetoecommerce.adapter.TabsAdapter;
 import br.com.uniftec.projetoecommerce.database.DataSource;
 import br.com.uniftec.projetoecommerce.model.Usuario;
+import br.com.uniftec.projetoecommerce.ui.fragment.ListPedidosFragment;
 
 public class ListProdutosActivity extends AppCompatActivity {
 
@@ -61,7 +65,14 @@ public class ListProdutosActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
+            case R.id.menu_pedidos:
 
+                List<Usuario> usuarios2 = DataSource.carregarJsonTestes(this);
+                Intent intent2 = new Intent(this, UserActivity.class);
+                intent2.putExtra(UserActivity.USER_PARAMETER, usuarios2.get(0));
+                startActivity(intent2);
+
+                return true;
             default:
                 return true;
         }
