@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import br.com.uniftec.projetoecommerce.ui.fragment.GraphFragment;
+import br.com.uniftec.projetoecommerce.ui.fragment.ListPedidosFragment;
 import br.com.uniftec.projetoecommerce.ui.fragment.ListProdutosFragment;
 
 public class TabsAdapter extends FragmentPagerAdapter {
@@ -20,6 +21,8 @@ public class TabsAdapter extends FragmentPagerAdapter {
                 return new ListProdutosFragment();
             case 1:
                 return new GraphFragment();
+            case 2:
+                return new ListPedidosFragment();
         }
         return null;
 
@@ -37,6 +40,8 @@ public class TabsAdapter extends FragmentPagerAdapter {
                 return "Produtos";
             case 1:
                 return "Gráfico de preços";
+            case 2:
+                return "Meus Pedidos";
         }
         return null;
     }

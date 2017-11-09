@@ -14,6 +14,7 @@ import java.util.List;
 
 import br.com.uniftec.projetoecommerce.R;
 import br.com.uniftec.projetoecommerce.model.Endereco;
+import br.com.uniftec.projetoecommerce.model.Pedido;
 import br.com.uniftec.projetoecommerce.model.Produto;
 import br.com.uniftec.projetoecommerce.model.Usuario;
 
@@ -130,6 +131,22 @@ public class DataSource {
         return json;
     }
 
+    public static String loadJSONPedidosFromAsset(Context context) throws IOException {
+        String json = null;
+        try {
+            InputStream is = context.getResources().openRawResource(R.raw.pedidos);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
 
     public static List<Produto> carregarJsonTestesProducts(Context context) {
 
@@ -164,6 +181,33 @@ public class DataSource {
         }
 
         return produtos;
+    }
+
+    public static List<Pedido> carregarJsonTestesPedidos(Context context) {
+
+        List<Pedido> pedidos = new ArrayList<>();
+
+        try {
+            JSONArray results = new JSONArray(loadJSONPedidosFromAsset(context));
+
+            for (int i = 0; i < results.length(); i++) {
+                JSONObject jsonResult = results.getJSONObject(i);
+
+                Pedido pedido = new Pedido();
+                pedido.setId(jsonResult.getInt("id"));
+                pedido.setIdUsuario(jsonResult.getInt("idUsuario"));
+                pedido.setProdutos(jsonResult.getJSONArray("produtos"));
+                pedido.setTotal(BigDecimal.valueOf(jsonResult.getDouble("total")));
+                pedido.setData(jsonResult.getString("data"));
+                pedido.setStatus(jsonResult.getInt("status"));
+
+                pedidos.add(pedido);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return pedidos;
     }
 
 }
