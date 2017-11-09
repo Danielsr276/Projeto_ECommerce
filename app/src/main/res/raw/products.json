@@ -83,5 +83,175 @@
       "id": 1,
       "nome": "Eletrônicos"
     }
+  },
+  {
+    "id": 1,
+    "titulo": "Samsung Galaxy S8 Dual Chip 4g Tela Infinita 5,8 ",
+    "descricao": "O display infinito tem uma tela incrível de ponta a ponta que se estende até as laterais do telefone, formando uma superfície totalmente suave e contínua. É vidro puro, intocado e ininterrupto, que ocupa toda a frente do telefone, fluindo pela estrutura de alumínio. O resultado é uma peça com lindas curvas, perfeitamente simétrica e única.",
+    "urlImagemPrincipal": "s8_0",
+    "listUrlsImagens": [
+      "s8_0",
+      "s8_1",
+      "s8_2",
+      "s8_0",
+      "s8_1",
+      "s8_2"
+    ],
+    "preco": 3999.00,
+    "precoComDesconto": 3599.00,
+    "destaque": 1,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 2,
+    "titulo": "Samsung Galaxy J5 Duos Preto",
+    "descricao": "Com a tela super AMOLED, O Galaxy J permite que você visualize fotos, vídeo, jogos e seus aplicativos preferidos de forma muito mais vívida e nítida..",
+    "urlImagemPrincipal": "j5_0",
+    "listUrlsImagens": [
+      "j5_0",
+      "j5_1",
+      "j5_2",
+      "j5_3",
+      "j5_0",
+      "j5_1",
+      "j5_2",
+      "j5_3"
+    ],
+    "preco": 1099.00,
+    "precoComDesconto": 799.00,
+    "destaque": 2,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 3,
+    "titulo": "Console Microsoft Xbox One 1tb Sem Kinect - Elite",
+    "descricao": "Tenha um desempenho profissional com o bundle Xbox One Elite, o modelo que chegou para agradar aosjogadores mais exigentes.",
+    "urlImagemPrincipal": "xbox_0",
+    "listUrlsImagens": [
+      "xbox_0",
+      "xbox_1",
+      "xbox_2",
+      "xbox_0",
+      "xbox_1",
+      "xbox_2"
+    ],
+    "preco": 2699.00,
+    "precoComDesconto": 2099.00,
+    "destaque": 3,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 4,
+    "titulo": "Samsung Galaxy J5 Duos Preto",
+    "descricao": "Com a tela super AMOLED, O Galaxy J permite que você visualize fotos, vídeo, jogos e seus aplicativos preferidos de forma muito mais vívida e nítida..",
+    "urlImagemPrincipal": "j5_0",
+    "listUrlsImagens": [
+      "j5_0",
+      "j5_1",
+      "j5_2",
+      "j5_3",
+      "j5_0"
+    ],
+    "preco": 1099.00,
+    "precoComDesconto": 799.00,
+    "destaque": 4,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 1,
+    "titulo": "Samsung Galaxy S8 Dual Chip 4g Tela Infinita 5,8 ",
+    "descricao": "O display infinito tem uma tela incrível de ponta a ponta que se estende até as laterais do telefone, formando uma superfície totalmente suave e contínua. É vidro puro, intocado e ininterrupto, que ocupa toda a frente do telefone, fluindo pela estrutura de alumínio. O resultado é uma peça com lindas curvas, perfeitamente simétrica e única.",
+    "urlImagemPrincipal": "s8_0",
+    "listUrlsImagens": [
+      "s8_0",
+      "s8_1",
+      "s8_2",
+      "s8_0",
+      "s8_1",
+      "s8_2"
+    ],
+    "preco": 3999.00,
+    "precoComDesconto": 3599.00,
+    "destaque": 1,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 2,
+    "titulo": "Samsung Galaxy J5 Duos Preto",
+    "descricao": "Com a tela super AMOLED, O Galaxy J permite que você visualize fotos, vídeo, jogos e seus aplicativos preferidos de forma muito mais vívida e nítida..",
+    "urlImagemPrincipal": "j5_0",
+    "listUrlsImagens": [
+      "j5_0",
+      "j5_1",
+      "j5_2",
+      "j5_3",
+      "j5_0",
+      "j5_1",
+      "j5_2",
+      "j5_3"
+    ],
+    "preco": 1099.00,
+    "precoComDesconto": 799.00,
+    "destaque": 2,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 3,
+    "titulo": "Console Microsoft Xbox One 1tb Sem Kinect - Elite",
+    "descricao": "Tenha um desempenho profissional com o bundle Xbox One Elite, o modelo que chegou para agradar aosjogadores mais exigentes.",
+    "urlImagemPrincipal": "xbox_0",
+    "listUrlsImagens": [
+      "xbox_0",
+      "xbox_1",
+      "xbox_2",
+      "xbox_0",
+      "xbox_1",
+      "xbox_2"
+    ],
+    "preco": 2699.00,
+    "precoComDesconto": 2099.00,
+    "destaque": 3,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": 4,
+    "titulo": "Samsung Galaxy J5 Duos Preto",
+    "descricao": "Com a tela super AMOLED, O Galaxy J permite que você visualize fotos, vídeo, jogos e seus aplicativos preferidos de forma muito mais vívida e nítida..",
+    "urlImagemPrincipal": "j5_0",
+    "listUrlsImagens": [
+      "j5_0",
+      "j5_1",
+      "j5_2",
+      "j5_3",
+      "j5_0"
+    ],
+    "preco": 1099.00,
+    "precoComDesconto": 799.00,
+    "destaque": 4,
+    "categoria": {
+      "id": 1,
+      "nome": "Eletrônicos"
+    }
   }
 ]

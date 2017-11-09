@@ -7,9 +7,9 @@
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/loading_custom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        app:indicatorColor="#ff1e1e"
+        app:indicatorColor="#619f9b"
         app:indicatorName="PacmanIndicator" />
 </LinearLayout>
