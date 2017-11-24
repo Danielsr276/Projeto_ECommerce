@@ -48,7 +48,7 @@ public class GraphFragment extends Fragment {
         changeHeight(barRange_2, 421);
         changeHeight(barRange_3, 310);
         changeHeight(barRange_4, 290);
-        changeHeight(barRange_5, 390);
+        changeHeight(barRange_5, 3111190);
 
         super.onActivityCreated(savedInstanceState);
     }

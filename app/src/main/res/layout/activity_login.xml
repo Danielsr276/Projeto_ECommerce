@@ -18,6 +18,16 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/txt_titulo_compras"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Login"
+            android:textAlignment="center"
+            android:textSize="36dp"
+            android:textStyle="normal" />
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

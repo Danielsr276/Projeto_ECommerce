@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,8 +45,8 @@ public class ListProdutosFragment extends Fragment implements ProductAdapter.OnA
         ProductAdapter productAdapter = new ProductAdapter(produtos, this);
         recyclerViewListaProdutos.setAdapter(productAdapter);
 
-        RecyclerView.LayoutManager layout = new LinearLayoutManager(getActivity(),
-                LinearLayoutManager.VERTICAL, false);
+        RecyclerView.LayoutManager layout = new StaggeredGridLayoutManager(2,
+                StaggeredGridLayoutManager.VERTICAL);
 
         recyclerViewListaProdutos.setLayoutManager(layout);
 

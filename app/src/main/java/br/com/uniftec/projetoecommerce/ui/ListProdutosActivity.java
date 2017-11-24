@@ -67,10 +67,11 @@ public class ListProdutosActivity extends AppCompatActivity {
                 return true;
             case R.id.menu_pedidos:
 
-                List<Usuario> usuarios2 = DataSource.carregarJsonTestes(this);
-                Intent intent2 = new Intent(this, UserActivity.class);
-                intent2.putExtra(UserActivity.USER_PARAMETER, usuarios2.get(0));
-                startActivity(intent2);
+                startActivity(new Intent(this, CarrinhoComprasActivity.class));
+//                List<Usuario> usuarios2 = DataSource.carregarJsonTestes(this);
+//                Intent intent2 = new Intent(this, UserActivity.class);
+//                intent2.putExtra(UserActivity.USER_PARAMETER, usuarios2.get(0));
+//                startActivity(intent2);
 
                 return true;
             default:
