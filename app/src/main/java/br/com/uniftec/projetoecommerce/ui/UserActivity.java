@@ -83,6 +83,9 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
     public void onClick(View view) {
         if (view == btnCadastrarUsuario) {
             finish();
+
+
+
         } else if (view == btnAdicionarEndereco) {
             Intent intent = new Intent(this, EnderecoActivity.class);
             intent.putExtra(EnderecoActivity.ENDERECO_TO_EDIT, new Endereco());
