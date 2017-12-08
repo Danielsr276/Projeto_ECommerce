@@ -1,12 +1,14 @@
-package br.com.uniftec.projetoecommerce.model;
+package br.com.uniftec.projetoecommerce.response;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
 
 /**
  * Created by daniel on 26/10/17.
  */
-
-public class Endereco implements Serializable {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class EnderecoResponse implements Serializable {
 
     private Integer id;
     private String rua;

@@ -1,5 +1,6 @@
 package br.com.uniftec.projetoecommerce.ui;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,8 +17,9 @@ import br.com.uniftec.projetoecommerce.R;
 import br.com.uniftec.projetoecommerce.adapter.EnderecoAdapter;
 import br.com.uniftec.projetoecommerce.model.Endereco;
 import br.com.uniftec.projetoecommerce.model.Usuario;
+import br.com.uniftec.projetoecommerce.task.IncluirUsuarioTask;
 
-public class UserActivity extends AppCompatActivity implements EnderecoAdapter.OnActionCompleted, View.OnClickListener {
+public class UserActivity extends AppCompatActivity implements EnderecoAdapter.OnActionCompleted, View.OnClickListener, IncluirUsuarioTask.IncluirUsuarioDelegate {
 
     public static final String USER_PARAMETER = "USER_PARAMETER";
     private Usuario usuario;
@@ -29,6 +32,7 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
     private Button btnCadastrarUsuario;
     private List<Endereco> listEnderecos;
     private Button btnAdicionarEndereco;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +85,11 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
 
     @Override
     public void onClick(View view) {
-        if (view == btnCadastrarUsuario) {
-            finish();
 
+
+        if (view == btnCadastrarUsuario) {
+            progressDialog = ProgressDialog.show(this, "Aguarde", "Carregando filmes", true, false);
+            incluirUsarioSucesso();
 
 
         } else if (view == btnAdicionarEndereco) {
@@ -91,5 +97,31 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
             intent.putExtra(EnderecoActivity.ENDERECO_TO_EDIT, new Endereco());
             startActivity(intent);
         }
+    }
+
+    public void incluirUsarioSucesso() {
+        Usuario usuario = new Usuario();
+        usuario.setCpf(String.valueOf(cpfUsuario.getText()));
+        usuario.setEmail(String.valueOf(emailUsuario.getText()));
+        usuario.setNome(String.valueOf(nomeUsuario.getText()));
+        usuario.setTelefone(String.valueOf(telefoneUsuario.getText()));
+//            progressDialog.dismiss();
+//            progressDialog = null;
+
+        IncluirUsuarioTask incluirUsuarioTask = new IncluirUsuarioTask(this);
+        incluirUsuarioTask.execute(usuario);
+    }
+
+    @Override
+    public void incluirUsarioSucesso(String token) {
+        Toast.makeText(this, "Usuário incluído com sucesso: " + token, Toast.LENGTH_LONG).show();
+
+        progressDialog.dismiss();
+        progressDialog = null;
+    }
+
+    @Override
+    public void incluirUsuarioFalha(String mensagem) {
+
     }
 }
