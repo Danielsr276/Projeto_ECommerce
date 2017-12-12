@@ -15,4 +15,5 @@
         android:title="Pedidos"
         android:icon="@android:drawable/ic_menu_manage"
         android:iconTint="@color/colorPrimaryDark"/>
+
 </menu>

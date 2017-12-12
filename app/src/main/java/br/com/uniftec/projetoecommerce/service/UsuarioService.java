@@ -1,5 +1,6 @@
 package br.com.uniftec.projetoecommerce.service;
 
+import br.com.uniftec.projetoecommerce.model.Endereco;
 import br.com.uniftec.projetoecommerce.model.Usuario;
 import br.com.uniftec.projetoecommerce.response.Resposta;
 import br.com.uniftec.projetoecommerce.response.UsuarioResponse;
@@ -18,9 +19,12 @@ public interface UsuarioService {
     @PUT("/usuario")
     public Call<Resposta<String>> salvarUsuario(@Body Usuario usuario);
 
-    @POST
+    @POST("/usuario")
     public Call<Resposta<UsuarioResponse>> atualizarUsuario(@Body Usuario usuario, @Header("X-Token") String token);
 
-    @POST
+    @POST("/usuario/login")
     public Call<Resposta<UsuarioResponse>> loginUsuario(@Body Usuario usuario);
+
+    @PUT("/usuario/endereco")
+    public Call<Resposta<String>> salvarEndereco(@Body Endereco endereco);
 }
