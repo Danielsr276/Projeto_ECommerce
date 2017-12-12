@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 Intent intent = new Intent(this, UserActivity.class);
                 intent.putExtra(UserActivity.USER_PARAMETER, usuarios.get(NUMERO_USUARIO));
+                intent.putExtra(UserActivity.LOGADO, false);
                 startActivity(intent);
 
                 break;

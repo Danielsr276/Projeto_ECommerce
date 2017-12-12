@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.List;
@@ -22,6 +23,7 @@ import br.com.uniftec.projetoecommerce.task.IncluirUsuarioTask;
 public class UserActivity extends AppCompatActivity implements EnderecoAdapter.OnActionCompleted, View.OnClickListener, IncluirUsuarioTask.IncluirUsuarioDelegate {
 
     public static final String USER_PARAMETER = "USER_PARAMETER";
+    public static final String LOGADO = "USER_LOGADO";
     private Usuario usuario;
     private RecyclerView recyclerViewListaEnderecos;
     private EditText nomeUsuario;
@@ -41,24 +43,29 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
 
         usuario = (Usuario) getIntent().getSerializableExtra(USER_PARAMETER);
 
+        recyclerViewListaEnderecos = (RecyclerView) findViewById(R.id.recyclerViewlistaEnderecos);
+
+        btnCadastrarUsuario = (Button) findViewById(R.id.btn_cadastrar_usuario);
+        btnAdicionarEndereco = (Button) findViewById(R.id.btn_add_endereco);
+
         nomeUsuario = (EditText) findViewById(R.id.id_usuario);
         emailUsuario = (EditText) findViewById(R.id.id_email);
         senhaUsuario = (EditText) findViewById(R.id.id_senha);
         cpfUsuario = (EditText) findViewById(R.id.id_cpf);
         telefoneUsuario = (EditText) findViewById(R.id.id_telefone);
-        btnCadastrarUsuario = (Button) findViewById(R.id.btn_cadastrar_usuario);
-        btnAdicionarEndereco = (Button) findViewById(R.id.btn_add_endereco);
 
+
+        if(getIntent().getBooleanExtra(LOGADO, false)) {
+
+            nomeUsuario.setText(usuario.getNome());
+            emailUsuario.setText(usuario.getEmail());
+            senhaUsuario.setText(usuario.getSenha());
+            cpfUsuario.setText(usuario.getCpf());
+            telefoneUsuario.setText(usuario.getTelefone());
+
+        }
         btnCadastrarUsuario.setOnClickListener(this);
         btnAdicionarEndereco.setOnClickListener(this);
-
-        nomeUsuario.setText(usuario.getNome());
-        emailUsuario.setText(usuario.getEmail());
-        senhaUsuario.setText(usuario.getSenha());
-        cpfUsuario.setText(usuario.getCpf());
-        telefoneUsuario.setText(usuario.getTelefone());
-
-        recyclerViewListaEnderecos = (RecyclerView) findViewById(R.id.recyclerViewlistaEnderecos);
 
         listEnderecos = usuario.getListEnderecos();
 
@@ -88,8 +95,8 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
 
 
         if (view == btnCadastrarUsuario) {
-            progressDialog = ProgressDialog.show(this, "Aguarde", "Carregando filmes", true, false);
-            incluirUsarioSucesso();
+            progressDialog = ProgressDialog.show(this, "Aguarde", "Carregando", true, false);
+            incluirUsuarioSucesso();
 
 
         } else if (view == btnAdicionarEndereco) {
@@ -99,10 +106,11 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
         }
     }
 
-    public void incluirUsarioSucesso() {
+    public void incluirUsuarioSucesso() {
         Usuario usuario = new Usuario();
         usuario.setCpf(String.valueOf(cpfUsuario.getText()));
         usuario.setEmail(String.valueOf(emailUsuario.getText()));
+        usuario.setSenha(String.valueOf(senhaUsuario.getText()));
         usuario.setNome(String.valueOf(nomeUsuario.getText()));
         usuario.setTelefone(String.valueOf(telefoneUsuario.getText()));
 //            progressDialog.dismiss();
@@ -110,6 +118,7 @@ public class UserActivity extends AppCompatActivity implements EnderecoAdapter.O
 
         IncluirUsuarioTask incluirUsuarioTask = new IncluirUsuarioTask(this);
         incluirUsuarioTask.execute(usuario);
+        finish();
     }
 
     @Override

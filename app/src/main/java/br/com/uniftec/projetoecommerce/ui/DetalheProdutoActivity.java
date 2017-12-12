@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.w3c.dom.Text;
 
 import br.com.uniftec.projetoecommerce.R;
@@ -41,9 +43,18 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
 
         imageProduto = (ImageView) findViewById(R.id.imagem_detalhe_produto);
 
-        int idImagem = getResources().getIdentifier(produto.getUrlImagemPrincipal(),
-                "drawable", getPackageName());
-        imageProduto.setImageDrawable(getDrawable(idImagem));
+
+        try {
+            String imagemUrl = "http://image.tmdb.org/t/p/w780" + produto.getUrlImagemPrincipal();
+            Picasso.with(getApplicationContext()).load(imagemUrl).into(imageProduto);
+        } catch (Exception e){
+
+            imageProduto.setImageDrawable(null);
+        }
+
+//        int idImagem = getResources().getIdentifier(produto.getUrlImagemPrincipal(),
+//                "drawable", getPackageName());
+//        imageProduto.setImageDrawable(getDrawable(idImagem));
 
         textViewId = (TextView) findViewById(R.id.id_detalhe_produto);
         textViewId.setText(String.valueOf(produto.getId()));

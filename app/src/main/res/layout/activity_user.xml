@@ -85,6 +85,7 @@
             android:layout_height="30dp"
             android:background="#a1d4e2"
             android:gravity="center"
+            android:id="@+id/linear_enderecos"
             android:orientation="horizontal">
 
             <TextView

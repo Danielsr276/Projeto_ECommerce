@@ -2,8 +2,8 @@
   {
     "id": 1,
     "nome": "admin",
-    "email": "admin@admin.com",
-    "senha": "admin",
+    "email": "e@c.com",
+    "senha": "123",
     "cpf": "123456789",
     "telefone": "054-91919991",
     "listEnderecos": [

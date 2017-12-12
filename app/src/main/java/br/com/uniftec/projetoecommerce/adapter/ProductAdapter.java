@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import br.com.uniftec.projetoecommerce.R;
@@ -53,11 +55,19 @@ public class ProductAdapter extends RecyclerView.Adapter implements View.OnClick
         holder.descricaoProduto.setText(String.valueOf(produto.getTitulo()));
 
 
-        int idImagem = holder.itemView.getResources().getIdentifier(
-                produto.getUrlImagemPrincipal(), "drawable",
-                holder.itemView.getContext().getPackageName());
+        try {
+            String imagemUrl = "http://image.tmdb.org/t/p/w780" + produto.getUrlImagemPrincipal();
+            Picasso.with(holder.itemView.getContext()).load(imagemUrl).into(holder.imagemProduto);
+        } catch (Exception e){
 
-        holder.imagemProduto.setImageDrawable(holder.itemView.getContext().getDrawable(idImagem));
+            holder.imagemProduto.setImageDrawable(null);
+        }
+
+//        int idImagem = holder.itemView.getResources().getIdentifier(
+//                produto.getUrlImagemPrincipal(), "drawable",
+//                holder.itemView.getContext().getPackageName());
+//
+//        holder.imagemProduto.setImageDrawable(holder.itemView.getContext().getDrawable(idImagem));
     }
 
     @Override

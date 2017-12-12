@@ -1,5 +1,8 @@
 package br.com.uniftec.projetoecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -8,7 +11,7 @@ import java.util.List;
 /**
  * Created by daniel on 26/10/17.
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Produto implements Serializable {
 
     public Produto() {
@@ -17,6 +20,8 @@ public class Produto implements Serializable {
     }
 
     private Integer id;
+
+    @JsonProperty("name")
     private String titulo;
     private String descricao;
     private String urlImagemPrincipal;
