@@ -15,6 +15,7 @@ public class Endereco implements Serializable {
     private String bairro;
     private String cidade;
     private String estado;
+    private String token;
 
     public Integer getId() {
         return id;
@@ -71,4 +72,13 @@ public class Endereco implements Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
 }

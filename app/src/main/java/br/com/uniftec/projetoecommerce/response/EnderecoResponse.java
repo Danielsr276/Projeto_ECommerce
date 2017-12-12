@@ -7,7 +7,6 @@ import java.io.Serializable;
 /**
  * Created by daniel on 26/10/17.
  */
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EnderecoResponse implements Serializable {
 
@@ -18,6 +17,7 @@ public class EnderecoResponse implements Serializable {
     private String bairro;
     private String cidade;
     private String estado;
+    private String token;
 
     public Integer getId() {
         return id;
@@ -74,4 +74,13 @@ public class EnderecoResponse implements Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
 }
