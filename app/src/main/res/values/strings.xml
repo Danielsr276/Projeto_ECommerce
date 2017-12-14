@@ -18,12 +18,11 @@
     <string name="title_activity_list_produtos">Produtos</string>
 
     <string-array name="categoria_destaque">
-        <item>"Categorias"</item>
-        <item>"Destaques"</item>
     </string-array>
     <string-array name="alfabeto_preco">
-        <item>"Alfabética"</item>
-        <item>"Preços"</item>
+        <item></item>
+        <item>"Sim"</item>
+        <item>"Não"</item>
     </string-array>
     <string-array name="endereco_mock">
         <item>"Caxias do sul"</item>

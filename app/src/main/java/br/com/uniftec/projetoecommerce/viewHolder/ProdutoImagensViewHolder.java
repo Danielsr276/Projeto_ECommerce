@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.io.Serializable;
+
 import br.com.uniftec.projetoecommerce.R;
 import br.com.uniftec.projetoecommerce.adapter.ProdutosImagensAdapter;
 
@@ -11,7 +13,7 @@ import br.com.uniftec.projetoecommerce.adapter.ProdutosImagensAdapter;
  * Created by daniel on 07/11/17.
  */
 
-public class ProdutoImagensViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class ProdutoImagensViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, Serializable {
 
     public ImageView imgProdutoList;
     public ProdutosImagensAdapter.OnActionCompleted callbackProdutoImagem;

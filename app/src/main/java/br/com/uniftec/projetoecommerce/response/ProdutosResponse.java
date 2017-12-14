@@ -3,6 +3,7 @@ package br.com.uniftec.projetoecommerce.response;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.List;
 
 import br.com.uniftec.projetoecommerce.model.Produto;
@@ -12,7 +13,7 @@ import br.com.uniftec.projetoecommerce.model.Produto;
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ProdutosResponse {
+public class ProdutosResponse implements Serializable{
 
     @JsonProperty("data")
     private List<Produto> produtos;

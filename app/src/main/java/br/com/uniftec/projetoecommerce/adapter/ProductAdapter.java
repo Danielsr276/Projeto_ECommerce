@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 
 import br.com.uniftec.projetoecommerce.R;
@@ -26,7 +27,7 @@ import br.com.uniftec.projetoecommerce.viewHolder.ProdutoViewHolder;
  * Created by daniel on 04/11/17.
  */
 
-public class ProductAdapter extends RecyclerView.Adapter implements View.OnClickListener {
+public class ProductAdapter extends RecyclerView.Adapter implements View.OnClickListener, Serializable {
 
     private List<Produto> listProdutos;
     private OnActionProductCompleted callbackProduto;
@@ -58,7 +59,7 @@ public class ProductAdapter extends RecyclerView.Adapter implements View.OnClick
         try {
             String imagemUrl = "http://image.tmdb.org/t/p/w780" + produto.getUrlImagemPrincipal();
             Picasso.with(holder.itemView.getContext()).load(imagemUrl).into(holder.imagemProduto);
-        } catch (Exception e){
+        } catch (Exception e) {
 
             holder.imagemProduto.setImageDrawable(null);
         }

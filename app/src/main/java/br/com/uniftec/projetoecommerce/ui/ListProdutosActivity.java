@@ -16,7 +16,7 @@ import br.com.uniftec.projetoecommerce.adapter.TabsAdapter;
 import br.com.uniftec.projetoecommerce.database.DataSource;
 import br.com.uniftec.projetoecommerce.model.Usuario;
 
-public class ListProdutosActivity extends AppCompatActivity {
+public class ListProdutosActivity extends AppCompatActivity{
 
     private TabsAdapter mTabsAdapter;
 
@@ -31,9 +31,9 @@ public class ListProdutosActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mViewPager = (ViewPager) findViewById(R.id.container);
         mTabsAdapter = new TabsAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mTabsAdapter);
 
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
@@ -74,6 +74,4 @@ public class ListProdutosActivity extends AppCompatActivity {
                 return true;
         }
     }
-
-
 }

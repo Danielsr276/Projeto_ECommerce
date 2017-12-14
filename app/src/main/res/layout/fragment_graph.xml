@@ -17,10 +17,11 @@
             android:background="@color/colorPrimary" />
 
         <TextView
+            android:id="@+id/txt_0_100"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Produtos de R$ 0,00 á R$ 100,00 - (5)" />
+            android:text="Produtos de R$ 0,00 á R$ 100,00 - (#$#)" />
 
     </LinearLayout>
 
@@ -37,10 +38,11 @@
             android:background="@color/colorAccent" />
 
         <TextView
+            android:id="@+id/txt_100_250"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Produtos de R$ 100,00 á R$ 250,00 - (38)" />
+            android:text="Produtos de R$ 100,00 á R$ 250,00 - (#$#)" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,10 +58,11 @@
             android:background="@color/cardview_shadow_start_color" />
 
         <TextView
+            android:id="@+id/txt_250_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Produtos de R$ 250,00 á R$ 500,00 - (33)" />
+            android:text="Produtos de R$ 250,00 á R$ 500,00 - (#$#)" />
     </LinearLayout>
 
     <LinearLayout
@@ -75,10 +78,11 @@
             android:background="@android:color/holo_blue_dark" />
 
         <TextView
+            android:id="@+id/txt_500_1500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Produtos de R$ 500,00 á R$ 1.500,00 - (29)" />
+            android:text="Produtos de R$ 500,00 á R$ 1.500,00 - (#$#)" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,10 +98,11 @@
             android:background="@android:color/holo_green_dark" />
 
         <TextView
+            android:id="@+id/txt_mais_1500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="Produtos acima de R$ 1.500,00 - (36)" />
+            android:text="Produtos acima de R$ 1.500,00 - (#$#)" />
     </LinearLayout>
 
     <LinearLayout

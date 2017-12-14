@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.Serializable;
 import java.util.List;
 
 import br.com.uniftec.projetoecommerce.R;
@@ -14,7 +15,7 @@ import br.com.uniftec.projetoecommerce.viewHolder.ProdutoImagensViewHolder;
  * Created by daniel on 07/11/17.
  */
 
-public class ProdutosImagensAdapter extends RecyclerView.Adapter {
+public class ProdutosImagensAdapter extends RecyclerView.Adapter implements Serializable {
 
     private List<String> listUrlsImagens;
     private OnActionCompleted callbackProdutoImagem;

@@ -15,11 +15,13 @@ import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
+import java.io.Serializable;
+
 import br.com.uniftec.projetoecommerce.R;
 import br.com.uniftec.projetoecommerce.adapter.ProdutosImagensAdapter;
 import br.com.uniftec.projetoecommerce.model.Produto;
 
-public class DetalheProdutoActivity extends AppCompatActivity implements View.OnClickListener, ProdutosImagensAdapter.OnActionCompleted {
+public class DetalheProdutoActivity extends AppCompatActivity implements View.OnClickListener, ProdutosImagensAdapter.OnActionCompleted, Serializable {
 
     public static final String PRODUTO_PARAMETER = "PRODUTO_PARAMETER";
 
@@ -47,7 +49,7 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
         try {
             String imagemUrl = "http://image.tmdb.org/t/p/w780" + produto.getUrlImagemPrincipal();
             Picasso.with(getApplicationContext()).load(imagemUrl).into(imageProduto);
-        } catch (Exception e){
+        } catch (Exception e) {
 
             imageProduto.setImageDrawable(null);
         }
