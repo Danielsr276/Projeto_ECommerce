@@ -21,10 +21,14 @@ public class Produto implements Serializable {
 
     private Integer id;
 
-    @JsonProperty("name")
+    @JsonProperty("nome")
     private String titulo;
     private String descricao;
     private String urlImagemPrincipal;
+    private ImagemPrincipal imagemPrincipal;
+
+    @JsonProperty("imagens")
+    private List<ImagemPrincipal> listImagens;
     private List<String> listUrlsImagens;
     private BigDecimal preco;
     private BigDecimal precoComDesconto;
@@ -101,5 +105,21 @@ public class Produto implements Serializable {
 
     public void setDestaque(Integer destaque) {
         this.destaque = destaque;
+    }
+
+    public ImagemPrincipal getImagemPrincipal() {
+        return imagemPrincipal;
+    }
+
+    public void setImagemPrincipal(ImagemPrincipal imagemPrincipal) {
+        this.imagemPrincipal = imagemPrincipal;
+    }
+
+    public List<ImagemPrincipal> getListImagens() {
+        return listImagens;
+    }
+
+    public void setListImagens(List<ImagemPrincipal> listImagens) {
+        this.listImagens = listImagens;
     }
 }

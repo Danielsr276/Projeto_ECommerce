@@ -136,11 +136,11 @@ public class GraphFragment extends Fragment implements CarregarProdutosTask.Carr
         textView_5.setText(textView_5.getText().toString().replace("#$#", valor5.toString()));
 
 
-        changeHeight(barRange_1, valor1 * 3);
-        changeHeight(barRange_2, valor2 * 3);
-        changeHeight(barRange_3, valor3 * 3);
-        changeHeight(barRange_4, valor4 * 3);
-        changeHeight(barRange_5, valor5 * 3);
+        changeHeight(barRange_1, valor1 * 4);
+        changeHeight(barRange_2, valor2 * 4);
+        changeHeight(barRange_3, valor3 * 4);
+        changeHeight(barRange_4, valor4 * 4);
+        changeHeight(barRange_5, valor5 * 4);
 
     }
 

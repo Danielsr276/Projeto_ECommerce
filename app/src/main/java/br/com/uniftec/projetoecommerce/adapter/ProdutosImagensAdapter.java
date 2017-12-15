@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.Serializable;
 import java.util.List;
 
 import br.com.uniftec.projetoecommerce.R;
+import br.com.uniftec.projetoecommerce.model.ImagemPrincipal;
 import br.com.uniftec.projetoecommerce.viewHolder.ProdutoImagensViewHolder;
 
 /**
@@ -17,11 +20,11 @@ import br.com.uniftec.projetoecommerce.viewHolder.ProdutoImagensViewHolder;
 
 public class ProdutosImagensAdapter extends RecyclerView.Adapter implements Serializable {
 
-    private List<String> listUrlsImagens;
+    private List<ImagemPrincipal> listUrlsImagens;
     private OnActionCompleted callbackProdutoImagem;
 
 
-    public ProdutosImagensAdapter(List<String> listUrlsImagens, OnActionCompleted callbackProdutoImagem) {
+    public ProdutosImagensAdapter(List<ImagemPrincipal> listUrlsImagens, OnActionCompleted callbackProdutoImagem) {
         this.listUrlsImagens = listUrlsImagens;
         this.callbackProdutoImagem = callbackProdutoImagem;
     }
@@ -41,13 +44,14 @@ public class ProdutosImagensAdapter extends RecyclerView.Adapter implements Seri
 
         ProdutoImagensViewHolder holder = (ProdutoImagensViewHolder) viewHolder;
 
-        String urlImage = listUrlsImagens.get(position);
 
-        int idImagem = holder.itemView.getResources().getIdentifier(
-                urlImage, "drawable",
-                holder.itemView.getContext().getPackageName());
+        try {
+            String urlImage = listUrlsImagens.get(position).getUrl();
+            Picasso.with(holder.itemView.getContext()).load(urlImage).into(holder.imgProdutoList);
+        } catch (Exception e) {
+            holder.imgProdutoList.setImageDrawable(null);
+        }
 
-        holder.imgProdutoList.setImageDrawable(holder.itemView.getContext().getDrawable(idImagem));
     }
 
     @Override

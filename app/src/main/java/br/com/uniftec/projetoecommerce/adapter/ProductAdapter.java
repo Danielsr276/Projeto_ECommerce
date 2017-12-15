@@ -57,7 +57,8 @@ public class ProductAdapter extends RecyclerView.Adapter implements View.OnClick
 
 
         try {
-            String imagemUrl = "http://image.tmdb.org/t/p/w780" + produto.getUrlImagemPrincipal();
+            //"http://image.tmdb.org/t/p/w780" +
+            String imagemUrl = produto.getImagemPrincipal().getUrl();
             Picasso.with(holder.itemView.getContext()).load(imagemUrl).into(holder.imagemProduto);
         } catch (Exception e) {
 

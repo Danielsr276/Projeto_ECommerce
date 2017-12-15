@@ -47,7 +47,7 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
 
 
         try {
-            String imagemUrl = "http://image.tmdb.org/t/p/w780" + produto.getUrlImagemPrincipal();
+            String imagemUrl = produto.getImagemPrincipal().getUrl();
             Picasso.with(getApplicationContext()).load(imagemUrl).into(imageProduto);
         } catch (Exception e) {
 
@@ -80,7 +80,7 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
         btnFecharDetalhe.setOnClickListener(this);
 
         recyclerViewImagens = (RecyclerView) findViewById(R.id.recycler_horizontal_imagens_produto);
-        recyclerViewImagens.setAdapter(new ProdutosImagensAdapter(produto.getListUrlsImagens(), this));
+        recyclerViewImagens.setAdapter(new ProdutosImagensAdapter(produto.getListImagens(), this));
 
         RecyclerView.LayoutManager layout = new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL, false);
@@ -98,11 +98,19 @@ public class DetalheProdutoActivity extends AppCompatActivity implements View.On
     @Override
     public void OnClick(int position, boolean isDelete) {
 
-        String itemAtPosition = (String) produto.getListUrlsImagens().get(position);
+        String itemAtPosition = (String) produto.getListImagens().get(position).getUrl();
 
-        int idImagem = getResources().getIdentifier(itemAtPosition,
-                "drawable", getPackageName());
+        try {
+            String urlImage = produto.getListImagens().get(position).getUrl();
+            Picasso.with(this).load(urlImage).into(imageProduto);
+        } catch (Exception e) {
+            imageProduto.setImageDrawable(null);
+        }
 
-        imageProduto.setImageDrawable(getDrawable(idImagem));
+
+//        int idImagem = getResources().getIdentifier(itemAtPosition,
+//                "drawable", getPackageName());
+//
+//        imageProduto.setImageDrawable(getDrawable(idImagem));
     }
 }

@@ -10,7 +10,7 @@
         android:id="@+id/imagem_detalhe_produto"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerInside" />
+        android:scaleType="fitCenter" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_horizontal_imagens_produto"
@@ -101,11 +101,12 @@
         android:layout_height="36dp"
         android:layout_margin="2dp"
         android:text="Adicionar no carrinho" />
+
     <Button
         android:id="@+id/btn_detalhe_produto_fechar"
         android:layout_width="match_parent"
-        android:layout_margin="2dp"
         android:layout_height="36dp"
+        android:layout_margin="2dp"
         android:text="Fechar" />
 
 
